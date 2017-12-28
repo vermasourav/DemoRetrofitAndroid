@@ -7,9 +7,9 @@ import android.widget.ListView;
 import android.widget.Toast;
 
 import com.verma.mobile.android.demoretrofitandroid.model.QuotesPresenterImp;
-import com.verma.mobile.android.demoretrofitandroid.presenter.QuotesPresenter;
+import com.verma.mobile.android.demoretrofitandroid.presenter.IQuotesPresenter;
 import com.verma.mobile.android.demoretrofitandroid.service.quotes.Quotes;
-import com.verma.mobile.android.demoretrofitandroid.view.QuotesView;
+import com.verma.mobile.android.demoretrofitandroid.view.IQuotesView;
 
 import java.util.ArrayList;
 import java.util.Iterator;
@@ -24,12 +24,12 @@ import butterknife.Unbinder;
  * Created by verma on 26-12-2017.
  */
 
-public class RetrofitActivity extends AppCompatActivity implements QuotesView{
+public class RetrofitActivity extends AppCompatActivity implements IQuotesView {
 
 
     private QuotesListAdapter adapter;
     private Unbinder unbinder;
-    private QuotesPresenter mQuotesPresenter;
+    private IQuotesPresenter mIQuotesPresenter;
     private static ArrayList<Quotes> arrayList = new ArrayList<Quotes>();
     @BindView(R.id.idListRetrofit) public ListView listView;
 
@@ -39,19 +39,18 @@ public class RetrofitActivity extends AppCompatActivity implements QuotesView{
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_retrofit);
         unbinder =ButterKnife.bind(this);
-        mQuotesPresenter = new QuotesPresenterImp(this);
         adapter = new QuotesListAdapter(RetrofitActivity.this, arrayList);
+        mIQuotesPresenter = new QuotesPresenterImp(this);
         listView.setAdapter(adapter);
-
     }
 
 
     @OnClick({ R.id.idButtonClean, R.id.idButtonRetrofit})
     public void pickDoor(Button door) {
         if (R.id.idButtonClean ==door.getId()) {
-            mQuotesPresenter.cleanMe();
+            mIQuotesPresenter.cleanMe();
         } else  if (R.id.idButtonRetrofit ==door.getId()){
-            mQuotesPresenter.callMe();
+            mIQuotesPresenter.callMe();
         }
     }
 

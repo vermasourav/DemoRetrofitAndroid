@@ -9,7 +9,7 @@ import retrofit2.http.GET;
  * Created by verma on 26-12-2017.
  */
 
-public interface Api {
+public interface QuotesApi {
     public String BASE_URL = "http://quotesondesign.com/wp-json/";
     public int QUOTES_OFFSET = 2;
 
