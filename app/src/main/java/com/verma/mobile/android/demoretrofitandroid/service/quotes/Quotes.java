@@ -1,4 +1,4 @@
-package com.verma.mobile.android.demoretrofitandroid;
+package com.verma.mobile.android.demoretrofitandroid.service.quotes;
 
 /**
  * Created by verma on 26-12-2017.

@@ -7,6 +7,8 @@ import android.view.ViewGroup;
 import android.widget.BaseAdapter;
 import android.widget.TextView;
 
+import com.verma.mobile.android.demoretrofitandroid.service.quotes.Quotes;
+
 import java.util.ArrayList;
 
 import butterknife.BindView;

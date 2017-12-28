@@ -1,4 +1,4 @@
-package com.verma.mobile.android.demoretrofitandroid;
+package com.verma.mobile.android.demoretrofitandroid.service.quotes;
 
 import java.util.List;
 
